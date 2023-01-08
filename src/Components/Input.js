@@ -12,13 +12,17 @@ function Input() {
     const [toggle, setToggle] = useState(false)
     let [arr, setArr] = useState([{
         title: 'hello',
-        icon: <img src={img1}></img>
+        icon: <img src={img1}></img>,
+        key: 1,
+        show: true
     }])
 
     function update() {
         setArr([...arr, {
             title: document.getElementById('title').value,
-            icon: <img src={document.getElementById('dropdown').value}></img>
+            icon: <img src={document.getElementById('dropdown').value}></img>,
+            key: arr.length + 1,
+            show: true
         }])
         while(arr[arr.length-1].title=='') arr.pop()
         console.log(arr[arr.length-1].title, ' ', arr[arr.length-1].icon, ' ', arr.length)
